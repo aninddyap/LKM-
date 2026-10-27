@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LKM Digital POE – Sifat dan Perubahan Zat</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f0ff;--card:#fff;--tx:#241b4b;--mut:#6b6590;--p:#6c4cf5;--p2:#ff7ab6;--y:#ffc93c;--g:#1fb784;--ln:#ddd6ff;--in:#faf8ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15112b;--card:#221c45;--tx:#f1edff;--mut:#a9a3d1;--ln:#3a3270;--in:#1a1538}}
+:root[data-theme="dark"]{--bg:#15112b;--card:#221c45;--tx:#f1edff;--mut:#a9a3d1;--ln:#3a3270;--in:#1a1538}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--tx);background-image:radial-gradient(circle at 10% 0,#ff7ab633,transparent 40%),radial-gradient(circle at 90% 10%,#6c4cf533,transparent 40%)}
+.wrap{max-width:760px;margin:0 auto;padding:12px 14px 90px}
+.top{display:flex;align-items:center;gap:10px;justify-content:space-between;font-family:'Baloo 2',sans-serif;font-weight:800}
+.xp{background:var(--y);color:#3b2a00;border-radius:99px;padding:2px 12px;font-size:14px}
+.dots{display:flex;gap:6px;margin:10px 0 6px}.dots i{flex:1;height:8px;border-radius:9px;background:var(--ln);transition:.4s}
+.dots i.on{background:linear-gradient(90deg,var(--p),var(--p2))}
+.lb{font-size:12px;color:var(--mut);display:flex;justify-content:space-between}
+.mas{display:flex;gap:10px;align-items:center;margin:12px 0}.mas .e{font-size:44px;animation:bob 2s infinite ease-in-out}
+.bub{background:var(--card);border:2px solid var(--ln);border-radius:16px 16px 16px 4px;padding:8px 12px;font-weight:700;font-size:14px}
+.card{background:var(--card);border-radius:24px;padding:18px;box-shadow:0 10px 30px #6c4cf522;border:2px solid var(--ln);animation:in .45s ease}
+@keyframes in{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+h2{font-family:'Baloo 2',sans-serif;font-size:24px;margin:0 0 8px;line-height:1.15}
+.tag{display:inline-block;background:linear-gradient(90deg,var(--p),var(--p2));color:#fff;border-radius:99px;padding:2px 12px;font-weight:800;font-size:12px;margin-bottom:6px}
+p{line-height:1.55;margin:8px 0}.story{background:var(--in);border-left:5px solid var(--y);padding:10px 14px;border-radius:12px}
+textarea,input[type=text],select{width:100%;font:inherit;color:var(--tx);background:var(--in);border:2px solid var(--ln);border-radius:14px;padding:10px 12px;margin:6px 0}
+textarea:focus,input:focus{outline:none;border-color:var(--p)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:13px}th,td{border:1px solid var(--ln);padding:4px}th{background:var(--in)}td input{margin:0;padding:6px;border-radius:8px;border-width:1px}
+.ov{overflow-x:auto;border-radius:12px}
+.ck{display:flex;gap:10px;align-items:flex-start;background:var(--in);border:2px solid var(--ln);border-radius:14px;padding:10px;margin:7px 0;cursor:pointer;transition:.2s}
+.ck input{width:22px;height:22px;accent-color:var(--g);flex:none;margin:0}.ck:has(input:checked){border-color:var(--g);background:#1fb78422}.ck:has(input:checked) span{text-decoration:line-through;opacity:.7}.ck:has(input:disabled){opacity:.45}
+.ch{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.ch button,.tb button,.btn{font:inherit;font-weight:800;border:2px solid var(--ln);background:var(--in);color:var(--tx);border-radius:99px;padding:8px 16px;cursor:pointer}
+.ch button.on{background:var(--p);color:#fff;border-color:var(--p)}
+.sc{width:100%;max-width:520px;display:block;margin:8px auto;background:linear-gradient(#e9f6ff,#f6efff);border-radius:18px}
+.sc text{font-family:Nunito;font-weight:800;fill:#241b4b}
+.tm{position:relative;width:170px;margin:10px auto}.tm svg{transform:rotate(-90deg)}.tm circle{fill:none;stroke-width:9}.r0{stroke:var(--ln)}.r1{stroke:var(--p);stroke-linecap:round;stroke-dasharray:339.3;transition:stroke-dashoffset .3s linear}
+.tt{position:absolute;inset:0;display:grid;place-items:center;font-family:'Baloo 2';font-size:34px}
+.tb{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.tb select{width:auto}
+.note{font-size:13px;color:var(--mut)}.warn{background:#ffc93c33;border-radius:12px;padding:8px 12px;font-size:13px;margin:8px 0}
+.peers{font-size:13px;margin:6px 0;color:var(--mut)}
+footer{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:2px solid var(--ln);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px))}
+footer div{max-width:760px;margin:auto;display:flex;gap:10px;align-items:center}footer .hint{flex:1;font-size:12px;color:var(--mut)}
+.nx{font:inherit;font-weight:800;background:linear-gradient(90deg,var(--p),var(--p2));color:#fff;border:0;border-radius:99px;padding:12px 24px;cursor:pointer}.nx:disabled{opacity:.35;cursor:not-allowed}
+.bd{display:inline-block;background:var(--in);border:2px solid var(--ln);border-radius:14px;padding:6px 10px;margin:4px;font-weight:800;font-size:13px}.bd.lk{opacity:.35}
+.rec dt{font-weight:800;margin-top:8px;color:var(--p)}.rec dd{margin:2px 0;white-space:pre-wrap;background:var(--in);padding:6px 10px;border-radius:10px}
+.cf{position:fixed;top:-30px;font-size:26px;animation:cf 2.2s ease-in forwards;z-index:9;pointer-events:none}
+@keyframes cf{to{transform:translateY(110vh) rotate(540deg)}}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.sg,.pw{opacity:0}.go .sg,.go .pw{animation:fall 1s ease-in forwards}
+@keyframes fall{0%{transform:translateY(-70px);opacity:0}20%{opacity:1}100%{transform:none;opacity:1}}
+.go .ice{animation:wig .4s .3s 5}.go .sh{animation:wig .35s 0s 6}.sh,.ice,.qm{transform-box:fill-box;transform-origin:center}
+@keyframes wig{50%{transform:rotate(7deg)}}
+.qm{opacity:0}.go .qm{animation:pop .5s var(--qd,3.6s) forwards,bob 1.2s calc(var(--qd,3.6s) + .5s) infinite ease-in-out}
+@keyframes pop{0%{opacity:0;transform:scale(.2)}70%{transform:scale(1.25)}100%{opacity:1;transform:scale(1)}}
+.st{opacity:0}.go .st{animation:stm 1.4s 2s forwards}@keyframes stm{10%,80%{opacity:1}100%{opacity:0}}
+.lq{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0)}.go .lq{animation:lq 1.4s 2.2s forwards}@keyframes lq{to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){.go *{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}}
+</style></head><body>
+<div class="wrap">
+<div class="top"><span>🧪 LKM Digital POE</span><span class="xp">⭐ <span id="xp">0</span> XP</span></div>
+<div class="dots" id="dots"></div><div class="lb"><span id="gl"></span><span id="pg"></span></div>
+<div id="net"></div><div class="peers" id="peers"></div>
+<div class="mas"><div class="e">🧑‍🔬</div><div class="bub" id="msg"></div></div>
+<div class="card" id="main"></div>
+</div>
+<footer><div><button class="btn" id="bk">⬅ Kembali</button><span class="hint" id="hint"></span><button class="nx" id="nx">Berikutnya ➜</button></div></footer>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let S={},L={kode:'',name:'',role:'Ketua'},ref=null,room=null,step=0,mx=0,pend={},tmo,canW=true,fired={},peers=[];
+const G=['Mulai','Predict','Observe','Explain','Simpulan','Refleksi','Selesai'];
+const K=(p,n)=>[...Array(n)].map((_,i)=>p+i);
+const ta=(k,ph)=>`<textarea data-k="${k}" rows="4" placeholder="${ph||'Tulis jawabanmu di sini…'}"></textarea>`;
+const ck=(p,a,seq)=>a.map((t,i)=>`<label class="ck"><input type="checkbox" data-k="${p}${i}" ${seq&&i?`data-after="${p}${i-1}"`:''}><span>${t}</span></label>`).join('');
+const chs=(k,a)=>`<div class="ch">${a.map(v=>`<button data-ch="${k}|${v}">${v}</button>`).join('')}</div>`;
+const tm=(id,m,ckk,sel)=>`<div class="tm" data-id="${id}" data-m="${m}" data-ck="${ckk}"><svg viewBox="0 0 120 120"><circle class="r0" cx="60" cy="60" r="54"/><circle class="r1" cx="60" cy="60" r="54"/></svg><b class="tt">--:--</b></div><div class="tb">${sel?`<select data-k="${id}_d" data-t="dur">${[1,2,3,5,10].map(x=>`<option value="${x}">${x} menit</option>`).join('')}</select>`:''}<button data-t="go">▶ Mulai</button><button data-t="pause">⏸ Jeda</button><button data-t="reset">↺ Reset</button></div><p class="note" style="text-align:center">Timer ini sinkron untuk semua anggota kelompok.</p>`;
+const glass=(x,ice)=>`<path d="M${x} 70h100l-12 100h-76z" fill="#ffffff55" stroke="#6c4cf5" stroke-width="3"/>`+(ice?[[18,112],[48,112],[33,82]].map(([a,b])=>`<rect class="ice" x="${x+a+4}" y="${b+30}" width="28" height="28" rx="6" fill="#bfe6ff" stroke="#7cc4f2" stroke-width="2"/>`).join(''):'');
+const qm=(x,y,d)=>`<g class="qm" style="--qd:${d}s"><circle cx="${x}" cy="${y}" r="26" fill="#ffc93c" stroke="#e0a400" stroke-width="3"/><text x="${x}" y="${y+14}" text-anchor="middle" font-size="40">?</text></g>`;
+const sc1=()=>`<svg class="sc" id="an" viewBox="0 0 360 200">${glass(30,1)}${glass(230,1)}<text x="80" y="192" text-anchor="middle">Wadah A</text><text x="280" y="192" text-anchor="middle">Wadah B</text><text class="sh" x="280" y="38" text-anchor="middle" font-size="34">🧂</text>${[0,1,2,3,4,5,6,7,8].map(i=>`<circle class="sg" cx="${255+i*6}" cy="${118+(i%3)*10}" r="3" fill="#fff" stroke="#8a8aa8" style="animation-delay:${.2+i*.25}s"/>`).join('')}${qm(180,95,3.6)}</svg>`;
+const sc2=()=>`<svg class="sc" id="an" viewBox="0 0 360 200">${glass(30)}${glass(230)}<text x="80" y="192" text-anchor="middle">Gelas 1</text><text x="280" y="192" text-anchor="middle">Gelas 2</text>${[0,1,2,3,4,5].map(i=>[80,280].map(c=>`<circle class="pw" cx="${c-18+i*7}" cy="${160-(i%2)*5}" r="4.5" fill="#fff" stroke="#b9b9d0" style="animation-delay:${i*.2}s"/>`).join('')).join('')}<text x="80" y="25" text-anchor="middle">🥄 soda kue</text><text x="280" y="25" text-anchor="middle">🥄 soda kue</text><rect class="st" x="77" y="35" width="6" height="70" fill="#e8a43c"/><rect class="st" x="277" y="35" width="6" height="70" fill="#5aa9f5"/><rect class="lq" x="44" y="100" width="72" height="68" fill="#e8a43c" opacity=".7"/><rect class="lq" x="244" y="100" width="72" height="68" fill="#5aa9f5" opacity=".7"/><text x="80" y="55" text-anchor="middle" font-size="13" style="fill:#7a4a00">cuka 🍶</text><text x="280" y="55" text-anchor="middle" font-size="13">air 💧</text>${qm(180,95,4.2)}</svg>`;
+const rp=(a)=>`<button class="btn" data-t="replay">🔁 Putar ulang animasi</button>`;
+const T2=['Wujud','Warna','Tekstur'],T3=['Terbentuknya gelembung/busa','Suhu dinding botol','Terbentuknya gas','Kondisi balon'];
+const tbl=(n,id,a,b,rows)=>`<p><b>Tabel ${n}. Data Hasil Pengamatan Praktikum ${n-1}</b></p><div class="ov"><table><tr><th rowspan="2">Aspek yang Diamati</th><th colspan="2">${a}</th><th colspan="2">${b}</th></tr><tr><th>Sebelum</th><th>Sesudah</th><th>Sebelum</th><th>Sesudah</th></tr>${rows.map((r,i)=>`<tr><td>${r}</td>${[0,1,2,3].map(c=>`<td><input type="text" data-k="${id}_${i}_${c}"></td>`).join('')}</tr>`).join('')}</table></div>`;
+const tkeys=(id,n)=>K(id+'_',n).flatMap(k=>[0,1,2,3].map(c=>k+'_'+c));
+const Q=['Berdasarkan hasil percobaan 1, apa perbedaan perubahan yang terjadi pada es tanpa garam dan es dengan garam? Mengapa hal tersebut terjadi? Jelaskan.','Berdasarkan hasil percobaan 1, termasuk perubahan apakah peristiwa es ketika mencair? Jelaskan.','Berdasarkan hasil percobaan 2, apa perbedaan perubahan yang terjadi pada botol berisi cuka dan soda kue serta botol berisi air dan soda kue? Mengapa hal tersebut terjadi? Jelaskan.','Berdasarkan hasil percobaan 2, kegiatan apa yang menghasilkan zat baru? Tentukan jenis perubahannya dan berikan bukti.','Berdasarkan percobaan yang telah dilakukan, apa perbedaan antara perubahan fisika dan perubahan kimia? Jelaskan.'];
+const P1='Prak 1: ',PR1=['Siapkan dua gelas plastik dan beri label Gelas A dan Gelas B.','Masukkan es batu dengan jumlah dan ukuran yang sama ke dalam kedua gelas.','Pada Gelas A, biarkan es batu tanpa tambahan apa pun.','Pada Gelas B, tambahkan garam di atas permukaan es batu.','Catat kondisi awal es batu pada kedua gelas (isi kolom “Sebelum” di Tabel 2).','Amati perubahan yang terjadi pada kedua gelas selama 5 menit (nyalakan timer).','Bandingkan kondisi es batu pada Gelas A dan Gelas B (isi kolom “Sesudah”).'];
+const PR2=['Siapkan dua botol plastik dan beri label C dan D.','Tuangkan cuka pada botol C dan tuangkan air pada botol D.','Masukkan 2 sendok makan soda kue ke dalam balon.','Pasang mulut balon pada masing-masing mulut botol dengan hati-hati (jangan sampai soda kue jatuh terlebih dahulu).','Pastikan balon terpasang dengan kuat pada mulut botol.','Angkat balon sehingga soda kue jatuh dan bercampur dengan masing-masing larutan.','Amati perubahan yang terjadi (nyalakan timer).'];
+const AL1=['Es batu','Garam','Gelas plastik'],AL2=['Soda kue','Cuka','Balon','Botol','Air','Gelas'];
+const STEPS=[
+{g:0,m:'Halo, ilmuwan cilik! Yuk masuk ke kelompokmu.',ok:()=>L.kode&&L.name,h:()=>`<span class="tag">Mulai</span><h2>Sifat dan Perubahan Zat</h2><p>Kita belajar dengan alur <b>P</b>redict 🔮 → <b>O</b>bserve 🔬 → <b>E</b>xplain 💡. Satu kelompok memakai kode yang sama, jawaban muncul langsung di layar semua anggota.</p><input type="text" data-l="kode" placeholder="Kode/nama kelompok (mis. Kelompok 3)"><input type="text" data-l="name" placeholder="Namamu"><select data-l="role">${['Ketua','Pencatat','Pelaksana','Pengamat waktu'].map(r=>`<option>${r}</option>`).join('')}</select>`},
+{g:1,m:'Tebak dulu ya, jangan takut salah! 🔮',req:['p1a','p1t'],h:()=>`<span class="tag">PREDICT · Kejadian 1</span><h2>Es batu dan garam</h2><div class="story">Pak Raka menyiapkan dua wadah berisi es batu dengan jumlah dan ukuran yang sama. Tanpa sengaja, garam tumpah ke salah satu wadah, sedangkan wadah lainnya tidak diberi garam. Kedua wadah dibiarkan selama beberapa menit.</div>${sc1()}${rp()}<p><b>Menurutmu, perubahan apa yang terjadi pada es batu di kedua wadah? Es batu di wadah mana yang akan lebih cepat mencair?</b></p>${chs('p1a',['Wadah A','Wadah B','Sama saja'])}<p>Tuliskan prediksimu dan alasan yang mendukung berdasarkan sifat dan perubahan zat.</p>${ta('p1t')}`},
+{g:1,m:'Satu tebakan lagi, kali ini di gelas! 🥄',req:['p2t'],h:()=>`<span class="tag">PREDICT · Kejadian 2</span><h2>Soda kue, cuka, dan air</h2><div class="story">Pak Raka menyiapkan dua gelas bening dan memasukkan satu sendok soda kue ke dalam masing-masing gelas. Ia menuangkan cuka ke gelas pertama dan air putih dengan volume yang sama ke gelas kedua, lalu mengamati selama beberapa menit.</div>${sc2()}${rp()}<p><b>Menurutmu, perubahan apa yang terjadi di masing-masing gelas?</b></p>${ta('p2t','Gelas 1: … Gelas 2: … Alasannya: …')}`},
+{g:2,m:'Siapkan alat dan bahan dulu. Centang kalau sudah lengkap!',req:[...K('a1_',3),...K('a2_',6)],h:()=>`<span class="tag">OBSERVE</span><h2>Praktikum Perubahan Fisika dan Kimia</h2><p><b>Tujuan:</b> (1) Menganalisis karakteristik perubahan fisika dan kimia melalui kegiatan praktikum dan diskusi secara tepat. (2) Menganalisis perbedaan perubahan fisika dan kimia melalui kegiatan praktikum dan diskusi secara tepat.</p><p><b>🧊 Alat dan bahan Praktikum 1</b></p>${ck('a1_',AL1)}<p><b>🎈 Alat dan bahan Praktikum 2</b></p>${ck('a2_',AL2)}`},
+{g:2,m:'Ikuti langkahnya satu per satu. Timer siap! ⏱️',req:[...K('c1_',7),...tkeys('o1',3)],h:()=>`<span class="tag">OBSERVE · Praktikum 1</span><h2>🧊 Es batu dan garam</h2>${ck('c1_',PR1,1)}${tm('t1',5,'c1_5')}${tbl(2,'o1','Gelas A (tanpa garam)','Gelas B (dengan garam)',T2)}`},
+{g:2,m:'Praktikum 2: hati-hati memasang balonnya ya! 🎈',req:[...K('c2_',7),...tkeys('o2',4)],h:()=>`<span class="tag">OBSERVE · Praktikum 2</span><h2>🎈 Soda kue, cuka, dan air</h2>${ck('c2_',PR2,1)}${tm('t2',3,'c2_6',1)}${tbl(3,'o2','Botol C (cuka)','Botol D (air)',T3)}`},
+...Q.map((q,i)=>({g:2,m:`Pertanyaan diskusi ${i+1} dari 5. Diskusikan bersama!`,req:['d'+i],h:()=>`<span class="tag">OBSERVE · Diskusi ${i+1}/5</span><h2>💬 Pertanyaan Diskusi</h2><p>${q}</p>${ta('d'+i)}`})),
+{g:3,m:'Saatnya membandingkan dengan tebakanmu tadi. 💡',req:['e0','e1'],h:()=>`<span class="tag">EXPLAIN</span><h2>💡 Penjelasan</h2><div class="story"><b>Prediksimu dulu:</b><br>Kejadian 1: ${esc(S.p1a)} lebih cepat mencair. ${esc(S.p1t)}<br>Kejadian 2: ${esc(S.p2t)}</div><p><b>Apakah hasil pengamatan sesuai dengan prediksimu?</b></p>${chs('e0',['Sesuai','Sebagian sesuai','Tidak sesuai'])}<p>Tuliskan prediksi yang berubah atau tetap, lalu jelaskan penyebabnya berdasarkan bukti percobaan.</p>${ta('e1')}`},
+{g:4,m:'Hampir selesai! Rangkum yang kamu pelajari. 📝',req:['k0'],h:()=>`<span class="tag">KESIMPULAN</span><h2>📝 Kesimpulan</h2><p>Berdasarkan hasil pengamatan dan percobaan yang telah kalian lakukan hari ini, tuliskan kesimpulan yang kalian peroleh:</p>${ta('k0')}`},
+{g:5,m:'Terakhir, refleksi diri. Jujur saja ya! 🌱',req:['r0','r1'],h:()=>`<span class="tag">REFLEKSI</span><h2>🌱 Refleksi</h2><p><b>Kesulitan apa yang kamu alami selama pembelajaran hari ini (saat memprediksi, praktikum, atau menjelaskan)?</b></p>${ta('r0')}<p><b>Bagaimana caramu mengatasi kesulitan tersebut?</b></p>${ta('r1')}<p>Perasaanmu hari ini:</p>${chs('r2',['😄','🙂','😐','😕'])}`},
+{g:6,m:'Hebat! Kamu dan kelompokmu berhasil! 🎉',h:()=>{const B=[['🔮 Peramal Hebat',3],['🔬 Pengamat Jeli',11],['💡 Penjelas Handal',12],['🌱 Pemikir Reflektif',14]];return `<span class="tag">SELESAI</span><h2>🎉 Kerja bagus, ${esc(L.name)}!</h2><p>${B.map(([n,s])=>`<span class="bd ${mx>=s?'':'lk'}">${n}</span>`).join('')}</p><div class="ch"><button class="btn" data-t="dl">⬇ Unduh jawaban (.txt)</button><button class="btn" data-t="cp">📋 Salin semua jawaban</button></div><dl class="rec">${recap().map(([a,b])=>`<dt>${a}</dt><dd>${esc(b)}</dd>`).join('')}</dl>`}}
+];
+function recap(){const r=[['Kelompok',L.kode],['Anggota',Object.keys(S).filter(k=>k[0]=='p'&&k[1]=='_').map(k=>S[k]).join(', ')],['Prediksi 1',(S.p1a||'')+' — '+(S.p1t||'')],['Prediksi 2',S.p2t]];[['o1',3,T2,'Tabel 2 (Gelas A sblm/ssd; Gelas B sblm/ssd)'],['o2',4,T3,'Tabel 3 (Botol C sblm/ssd; Botol D sblm/ssd)']].forEach(([id,n,rows,t])=>rows.forEach((x,i)=>r.push([t+' – '+x,[0,1,2,3].map(c=>S[id+'_'+i+'_'+c]||'-').join(' | ')])));Q.forEach((q,i)=>r.push(['Diskusi '+(i+1)+': '+q,S['d'+i]]));r.push(['Explain ('+(S.e0||'-')+')',S.e1],['Kesimpulan',S.k0],['Kesulitan',S.r0],['Cara mengatasi',S.r1]);return r.map(([a,b])=>[a,b||'-'])}
+const txt=()=>recap().map(([a,b])=>a+'\n'+b).join('\n\n');
+function put(k,v,now){S[k]=v;pend[k]=v;clearTimeout(tmo);tmo=setTimeout(flush,now?0:350)}
+function flush(){if(!ref||!canW||!Object.keys(pend).length)return;const p=pend;pend={};ref.update(p).catch(()=>ref.set({...S,...p}).catch(()=>{}))}
+function sync(){document.querySelectorAll('#main [data-k]').forEach(el=>{const v=S[el.dataset.k];if(el.type==='checkbox')el.checked=!!v;else if(el!==document.activeElement&&el.value!==String(v??''))el.value=v??''});
+document.querySelectorAll('[data-after]').forEach(el=>{el.disabled=!S[el.dataset.after]});
+document.querySelectorAll('[data-ch]').forEach(b=>{const[k,v]=b.dataset.ch.split('|');b.classList.toggle('on',S[k]===v)});gate()}
+function gate(){const s=STEPS[step],ok=s.ok?!!s.ok():(s.req||[]).every(k=>{const v=S[k];return v===true||(typeof v==='string'&&v.trim())});$('#nx').disabled=!ok;$('#hint').textContent=ok||step==STEPS.length-1?'':'Lengkapi dulu semua isian & centang di halaman ini ✨';$('#nx').style.visibility=step==STEPS.length-1?'hidden':'visible';$('#bk').style.visibility=step?'visible':'hidden'}
+function show(){const s=STEPS[step];$('#main').innerHTML=s.h();$('#main').style.animation='none';void $('#main').offsetWidth;$('#main').style.animation='';$('#msg').textContent=s.m;
+$('#dots').innerHTML=G.map((_,i)=>`<i class="${i<=s.g?'on':''}"></i>`).join('');$('#gl').textContent=G[s.g];$('#pg').textContent=`Langkah ${step+1}/${STEPS.length}`;$('#xp').textContent=mx*10;
+document.querySelectorAll('#main [data-l]').forEach(el=>{el.value=L[el.dataset.l];el.oninput=()=>{L[el.dataset.l]=el.value.trim();gate()}});
+document.querySelectorAll('#main [data-k]').forEach(el=>{el.addEventListener(el.type==='checkbox'?'change':'input',()=>{put(el.dataset.k,el.type==='checkbox'?el.checked:el.value);if(el.dataset.t=='dur')timer(el.closest('.card').querySelector('.tm').dataset.id,'reset');sync()})});
+replay();sync();scrollTo(0,0)}
+function replay(){const a=$('#an');if(a){a.classList.remove('go');void a.getBoundingClientRect();a.classList.add('go')}}
+function boom(){for(let i=0;i<26;i++){const e=document.createElement('span');e.className='cf';e.textContent='🎉⭐🔬✨🧪'.match(/./gu)[i%5];e.style.left=Math.random()*95+'vw';e.style.animationDelay=Math.random()*.6+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),3000)}}
+async function go(n){if(step===0&&n>0)await join();const g=STEPS[step].g;step=n;mx=Math.max(mx,n);if(STEPS[n].g!==g)boom();show()}
+$('#nx').onclick=()=>go(step+1);$('#bk').onclick=()=>go(step-1);
+async function join(){if(ref)return;const code='g-'+L.kode.toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,40);
+try{const db=await claude.use('db');if(!db)throw 0;try{const u=await claude.use('user');if(u&&u.can('data.write')===false)canW=false}catch(e){}ref=db.doc('lkm/'+code);ref.onSnapshot(sn=>{if(sn.exists)S={...sn.data(),...pend};sync()},()=>{});
+if(!canW)$('#net').innerHTML='<div class="warn">👀 Kamu hanya bisa melihat. Minta guru memberi akses Contributor agar bisa mengisi.</div>';else $('#net').innerHTML='<div class="warn">🟢 Terhubung: jawaban kelompok “'+esc(L.kode)+'” tersinkron real time.</div>';put('p_'+L.name.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,20),L.name+' ('+L.role+')',1)}
+catch(e){$('#net').innerHTML='<div class="warn">Mode sendiri: jawaban tidak tersinkron dengan anggota lain (buka lewat tautan yang dibagikan guru dan masuk akun).</div>'}
+try{room=await claude.use('room');if(room){room.presence({n:L.name,r:L.role,k:code});room.onPeers(l=>{const o=l.map(p=>p.presence).filter(p=>p&&p.k===code&&p.n);$('#peers').textContent=o.length?'👥 Online: '+o.map(p=>p.n+' ('+p.r+')').join(', '):''})}}catch(e){}}
+function timer(id,act){const el=document.querySelector(`.tm[data-id="${id}"]`),d=(+S[id+'_d']||+el.dataset.m)*60,T=S[id]||{},left=T.run?Math.max(0,(T.end-Date.now())/1000):(T.left??d);
+if(act=='go'&&left>0)put(id,{run:true,end:Date.now()+left*1000,left},1);if(act=='pause')put(id,{run:false,left},1);if(act=='reset')put(id,{run:false,left:d,end:0},1)}
+function beep(){try{const c=new AudioContext(),o=c.createOscillator();o.connect(c.destination);o.frequency.value=880;o.start();o.stop(c.currentTime+.6)}catch(e){}}
+setInterval(()=>document.querySelectorAll('.tm').forEach(el=>{const id=el.dataset.id,T=S[id]||{},d=(+S[id+'_d']||+el.dataset.m)*60,left=T.run?Math.max(0,(T.end-Date.now())/1000):(T.left??d),s=Math.ceil(left);
+el.querySelector('.tt').textContent=String(s/60|0).padStart(2,'0')+':'+String(s%60).padStart(2,'0');el.querySelector('.r1').style.strokeDashoffset=339.3*(1-left/d);
+if(T.run&&left<=0&&!fired[id+T.end]){fired[id+T.end]=1;put(id,{run:false,left:0},1);put(el.dataset.ck,true,1);beep();boom();sync()}}),250);
+document.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
+if(b.dataset.ch){const[k,v]=b.dataset.ch.split('|');put(k,v);sync()}
+const t=b.dataset.t,id=b.closest('.card')?.querySelector('.tm')?.dataset.id;
+if(['go','pause','reset'].includes(t))timer(id,t);if(t=='replay')replay();
+if(t=='cp'){try{await navigator.clipboard.writeText(txt());b.textContent='✅ Tersalin!'}catch(x){b.textContent='Gagal menyalin'}}
+if(t=='dl'){try{const d=await claude.use('downloads');await d.save({filename:'LKM-'+(L.kode||'kelompok')+'.txt',data:txt()})}catch(x){b.textContent='Gunakan tombol Salin'}}});
+show();
+</script></body></html>
